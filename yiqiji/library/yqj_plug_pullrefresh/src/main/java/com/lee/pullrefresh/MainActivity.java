@@ -11,7 +11,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        String a = "黄尚";
         findViewById(R.id.listview).setOnClickListener(this);
         findViewById(R.id.webview).setOnClickListener(this);
         findViewById(R.id.scrollview).setOnClickListener(this);
