@@ -13,6 +13,7 @@ import android.telephony.TelephonyManager;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.umeng.analytics.AnalyticsConfig;
 import com.umeng.analytics.MobclickAgent;
 import com.yiqiji.money.R;
 import com.yiqiji.frame.core.facade.TaskQueue;
@@ -23,6 +24,7 @@ import com.yiqiji.money.modules.common.db.DailycostContract;
 import com.yiqiji.money.modules.common.entity.MyBooksListInfo;
 import com.yiqiji.money.modules.common.myserver.MyServer;
 import com.yiqiji.money.modules.common.plication.MyApplicaction;
+import com.yiqiji.money.modules.common.utils.ChannelUtil;
 import com.yiqiji.money.modules.common.utils.DownUrlUtil;
 import com.yiqiji.money.modules.common.utils.FileUtil;
 import com.yiqiji.money.modules.common.utils.InternetUtils;
@@ -79,6 +81,8 @@ public class StartActivity extends BaseActivity {
         setContentView(R.layout.activity_start);
         setPemission();
 //        startRemind();
+
+
     }
 
     private void startRemind() {
@@ -132,6 +136,8 @@ public class StartActivity extends BaseActivity {
     }
 
     private void setStart() {
+
+
         // 设置系统唯一标示
         TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 

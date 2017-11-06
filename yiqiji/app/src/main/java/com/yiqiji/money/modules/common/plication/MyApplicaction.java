@@ -15,6 +15,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
+import com.umeng.analytics.AnalyticsConfig;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
@@ -27,6 +28,7 @@ import com.yiqiji.money.modules.common.db.DailycostDatabaseHelper;
 import com.yiqiji.money.modules.common.entity.LocalImageHelper;
 import com.yiqiji.money.modules.common.request.LocationServer;
 import com.yiqiji.money.modules.common.request.QiniuServer;
+import com.yiqiji.money.modules.common.utils.ChannelUtil;
 import com.yiqiji.money.modules.common.utils.DisplayUtil;
 
 import java.io.File;
@@ -83,6 +85,8 @@ public class MyApplicaction extends BaseApplication {
         // 以下语句用于设置日志开关（默认开启），设置成false时关闭语音云SDK日志打印
         // Setting.setShowLog(false);
         super.onCreate();
+
+        MobclickAgent.startWithConfigure(new MobclickAgent.UMAnalyticsConfig(getApplicationContext(), "appkey", ChannelUtil.getChannel(this)));
         if (RequsterTag.DEBUG) {// 设置开启日志,发布时请关闭日志
             MobclickAgent.setDebugMode(true);
             JPushInterface.setDebugMode(true);
@@ -100,7 +104,7 @@ public class MyApplicaction extends BaseApplication {
         QiniuServer.configQiniu();
         locationServer = new LocationServer(app);
 
-      //设置友盟每次登录都需要回调确认
+        //设置友盟每次登录都需要回调确认
         UMShareConfig config = new UMShareConfig();
         config.isNeedAuthOnGetUserInfo(true);
         UMShareAPI.get(mContext).setShareConfig(config);
