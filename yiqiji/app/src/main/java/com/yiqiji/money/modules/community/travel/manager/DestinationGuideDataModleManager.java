@@ -42,11 +42,12 @@ public class DestinationGuideDataModleManager {
         hotDestinationsMultiitems.add(hotDestinationsMultiitem);
 
         for (int i = 0; i < bookCellModels.size(); i++) {
-            BookCellModel bookCellModel1 = bookCellModels.get(i);
-            HotDestinationsMultiitem hotDestinationsMultiitem1 = new HotDestinationsMultiitem();
-            hotDestinationsMultiitem1.setItemType(ConstantTravel.HOTDESTINATIONS_CONTENT);
-            hotDestinationsMultiitem1.setData(bookCellModel1);
-            hotDestinationsMultiitems.add(hotDestinationsMultiitem1);
+                BookCellModel bookCellModel1 = bookCellModels.get(i);
+                HotDestinationsMultiitem hotDestinationsMultiitem1 = new HotDestinationsMultiitem();
+                hotDestinationsMultiitem1.setItemType(ConstantTravel.HOTDESTINATIONS_CONTENT);
+                hotDestinationsMultiitem1.setData(bookCellModel1);
+                hotDestinationsMultiitems.add(hotDestinationsMultiitem1);
+
         }
         return hotDestinationsMultiitems;
     }

@@ -477,6 +477,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
         mData.addAll(dataList);
         notifyDataSetChanged();
     }
+
     /**
      * add new data in to certain location
      *
